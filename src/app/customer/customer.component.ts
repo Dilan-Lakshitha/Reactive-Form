@@ -9,5 +9,15 @@ import { Customer } from './customer';
   styleUrls: ['./customer.component.css']
 })
 export class CustomerComponent {
+  customer = new Customer();
 
+  constructor() { }
+
+  ngOnInit(): void {
+  }
+
+  save(customerForm: NgForm): void {
+    console.log(customerForm.form);
+    console.log('Saved: ' + JSON.stringify(customerForm.value));
+  }
 }
